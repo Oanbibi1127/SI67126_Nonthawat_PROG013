@@ -1,0 +1,126 @@
+.form-container {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+label {
+    margin-right: 10px;
+    white-space: nowrap; 
+}
+
+.form-group.left {
+    margin-left: 10%;
+}
+
+.form-group.right {
+    margin-right: 10%;
+    justify-content: flex-end;
+}
+
+input[type="text"], input[type="date"], select {
+    padding: 5px;
+    width: 150px;
+    margin-right: 10px; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.action-link {
+    color: rgb(8, 87, 235);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+input[name="box-2"] {
+    width: 330px; 
+}
+
+select[name="status"] {
+    width: 335px; 
+}
+
+.search-button {
+    font-size: 20px;
+    background-color: #00bfff;
+}
+
+.centered-button {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.program-code {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #000;
+    padding: 20px;
+    margin-top: 20px;
+}
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+span {
+    margin-top: 5px;
+    color: #000;
+}

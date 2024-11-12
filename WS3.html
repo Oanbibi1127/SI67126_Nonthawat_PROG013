@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Table</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="WS3.css">
+    <link rel="stylesheet" href="WS3_Model.css">
+    
+</head>
+
+<body>
+    <h2 style="display: inline-flex; align-items: center; gap: 10px;">
+        สมาชิก
+        <i class="fas fa-house-user" style="font-size: 80px;"></i>
+    </h2>
+
+
+    <div class="search-container">
+        <input type="text" placeholder="Search..">
+        <button>Search</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addUserModal"><i
+                class="fas fa-plus"></i> Add</button>
+    </div>
+
+    <table>
+        <tr>
+            <th>No.</th>
+            <th>ชื่อ</th>
+            <th>ประเภท</th>
+            <th>สาขา</th>
+            <th>สิทธิ์การใช้งาน</th>
+            <th>สถานะ</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>รังสรร ศรีบุญเรือง</td>
+            <td>พนักงาน</td>
+            <td>เมืองสมุทรสาคร</td>
+            <td>Admin</td>
+            <td>Active</td>
+            <td class="action-buttons">
+                <i class="fas fa-trash"></i>
+                <i class="fas fa-wrench"></i>
+
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>ชัชชาลี สิทธิพันธ์ุ</td>
+            <td>บุคคลธรรมดา</td>
+            <td>รังสิต</td>
+            <td>ลูกค้า</td>
+            <td>Active</td>
+            <td class="action-buttons">
+                <i class="fas fa-trash"></i>
+                <i class="fas fa-wrench"></i>
+
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>บริษัท Soft Square</td>
+            <td>นิติบุคคล</td>
+            <td>เมืองปทุมธานี</td>
+            <td>ลูกค้า</td>
+            <td>Inactive</td>
+            <td class="action-buttons">
+                <i class="fas fa-trash"></i>
+                <i class="fas fa-wrench"></i>
+
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>ดอมมินิก โทเรดโต้</td>
+            <td>พนักงาน</td>
+            <td>เมืองปทุมธานี</td>
+            <td>บุรุษไปรษณีย์</td>
+            <td>Active</td>
+            <td class="action-buttons">
+                <i class="fas fa-trash"></i>
+                <i class="fas fa-wrench"></i>
+
+            </td>
+        </tr>
+    </table>
+
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <h3>เพิ่มสมาชิก</h3>
+            <input type="text" placeholder="ชื่อ">
+            <input type="text" placeholder="ประเภท">
+            <input type="text" placeholder="สาขา">
+            <input type="text" placeholder="สิทธิ์การใช้งาน">
+            <select>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+            <button onclick="closeModal()">บันทึก</button>
+        </div>
+    </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="addUserModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addUserModalLabel">เพิ่มสมาชิก</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tr>
+                        <td>
+                            <p>ประเภท:<span class="text-danger">*</span></p>
+                        </td>
+                        <td>
+                            <input type="radio" name="type" value="External" id="typeExternal" required>
+                            <label for="typeExternal">External</label>
+                            <input type="radio" name="type" value="Internal" id="typeInternal">
+                            <label for="typeInternal">Internal</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>ประเภทลูกค้า: <span class="text-danger">*</span></p>
+                        </td>
+                        <td>
+                            <input type="radio" name="customerType" value="นิติบุคคล" id="customerTypeEntity" required>
+                            <label for="customerTypeEntity">นิติบุคคล</label>
+                            <input type="radio" name="customerType" value="บุคคลธรรมดา" id="customerTypeIndividual">
+                            <label for="customerTypeIndividual">บุคคลธรรมดา</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>ชื่อ: <span class="text-danger">*</span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="firstName" placeholder="ชื่อ" required></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>สกุล: <span class="text-danger">*</span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="lastName" placeholder="สกุล" required></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>เพศ: <span class="text-danger">*</span></p>
+                        </td>
+                        <td>
+                            <input type="radio" name="gender" value="ชาย" id="genderMale" required>
+                            <label for="genderMale">ชาย</label>
+                            <input type="radio" name="gender" value="หญิง" id="genderFemale">
+                            <label for="genderFemale">หญิง</label>
+                            <input type="radio" name="gender" value="ไม่ระบุ" id="genderNotSpecified">
+                            <label for="genderNotSpecified">ไม่ระบุ</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>รหัสผู้ใช้: <span class="text-danger">*</span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="username" placeholder="Username" required></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>รหัสผ่าน: <span class="text-danger">*</span></p>
+                        </td>
+                        <td class="password-field">
+                            <input type="password" class="form-control" id="password" placeholder="Password" required>
+                            <span toggle="#password" class="fa fa-fw fa-eye toggle-password"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>เลขที่บัตรประชาชน / เลขที่เสียภาษี: <span class="text-danger">*</span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="id"
+                                placeholder="เลขที่บัตรประชาชน / เลขที่เสียภาษี" required></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>วันเกิด:<span class="text-danger">*</span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="birthday" placeholder="วว/ดด/ปปปป" required
+                                disabled></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>ชื่อบริษัท:<span class="text-danger">*</span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="company" placeholder="ชื่อบริษัท" required></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>สาขา:<span class="text-danger">*</span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="branch" placeholder="สาขา" required></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>รหัสพนักงาน:<span class="text-danger">*</span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="id_employee" required disabled></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>เริ่มต้น:<span></span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="stats" placeholder="วว/ดด/ปปปป" required
+                                disabled></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>สิ้นสุด:<span></span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="end" placeholder="วว/ดด/ปปปป" required disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>ตำแหน่ง:<span class="text-danger">*</span></p>
+                        </td>
+                        <td>
+                            <select class="form-control" id="position" required disabled>
+                                <option value="" disabled selected>กรุณาเลือกรายการ</option>
+                                <option value="ประธานบริษัท">ประธานบริษัท</option>
+                                <option value="ผู้จัดการ">ผู้จัดการ</option>
+                                <option value="ลูกจ้าง">ลูกจ้าง</option>
+            
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>แผนก:<span class="text-danger">*</span></p>
+                        </td>
+                        <td>
+                            <select class="form-control" id="department" required disabled>
+                                <option value="" disabled selected>กรุณาเลือกรายการ</option>
+                                <option value="บัญชี">บัญชี</option>
+                                <option value="บุคคล">บุคคล</option>
+                                <option value="ช่างเทคนิค ">ช่างเทคนิค</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>หน่วยงาน:<span class="text-danger">*</span></p>
+                        </td>
+                        <td>
+                            <select class="form-control" id="Corporate_agency" required >
+                                <option value="" disabled selected>กรุณาเลือกรายการ</option>
+                                <option value="หน่วยงานที่ 1 ">หน่วยงานที่ 1 </option>
+                                <option value="หน่วยงานที่ 2 ">หน่วยงานที่ 2 </option>
+                                <option value="หน่วยงานที่ 3 ">หน่วยงานที่ 3 </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>อีเมล:<span class="text-danger">*</span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="Email" placeholder="อีเมล" required></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p>เลขที่ <span>:</span></p>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control short-input" id="number1" placeholder="เลขที่" required>
+                            <span></span>
+                            <p style="display: inline-block; margin-right: 5px;">อาคาร <span>:</span></p>
+                            <input type="text" class="form-control short-input" id="buling" placeholder="อาคาร" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>หมู่<span>:</span></p>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control short-input" id="group" placeholder="หมู่" required>
+                            <span></span>
+                            <p style="display: inline-block; margin-right: 5px;">ถนน <span>:</span></p>
+                            <input type="text" class="form-control short-input" id="road" placeholder="ถนน" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>ตำบล/อำเภอ/จังหวัด/รหัสไปรษณีย์<span class="text-danger">*</span></p>
+                        </td>
+                        <td>
+                            <select class="form-control" id="IP" required >
+                                <option value="" disabled selected>กรุณาเลือกรายการ</option>
+                                <option value="หน่วยงานที่ 1 ">เมือง, โคราช, นครราชสีมา, 30000</option>
+                                <option value="หน่วยงานที่ 2 ">คลอง 1, คลองหลวง, ปทุมธานี, 12120 </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>เบอร์โทรศัพท์ <span class="text-danger">*</span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="Phon" placeholder="เบอร์โทรศัพท์" required></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>วงเงิน :<span></span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="Limit" placeholder="วงเงิน" value="200,000" readonly></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <p>วงเงินคงเหลือ :<span ></span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="credit_limit" placeholder="วงเงินคงเหลือ " required></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>วงเงินเกิน :<span class="text-danger">*</span></p>
+                        </td>
+                        <td><input type="text" class="form-control" id="Credit_limit_exceeded" placeholder="วงเงินเกิน" required></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>สิทธิการใช้งาน:<span></span></p>
+                        </td>
+                        <td><input type="checkbox"><span>  </span>ลูกค้า <input type="checkbox"><span>  </span>บุรุษไปรษณีย์ 
+                            <br>
+                        <input type="checkbox"><span>  </span>ผู้ดูแลรักษาระบบ  <input type="checkbox"><span>  </span>ผู้ดูแล database
+                        <br>
+                       <input type="checkbox"><span>  </span>Admin</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p>สิทธิ์ในการพิมพ์แสตมป์: <span class="text-danger">*</span></p>
+                        </td>
+                        <td>
+                            <input type="radio" name="type" value="External" id="typeExternal" required>
+                            <label for="typeExternal">ไม่มีสิทธิ์</label>
+                            <input type="radio" name="type" value="Internal" id="typeInternal">
+                            <label for="typeInternal">มีสิทธิ์</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>เพิ่มตู้:<span></span></p>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control two-input" id="add" required>
+                            <span class="action-buttons"><i class="fas fa-plus"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>สถานะ<span class="text-danger">*</span></p>
+                        </td>
+                        <td>
+                            <select class="form-control" id="status" required >
+                                <option value="หน่วยงานที่ 1 ">Active</option>
+                                <option value="หน่วยงานที่ 2 ">Inactive</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p><button type="button" class="btn btn-primary btn-block">บันทึก</button></p>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">ยกเลิก</button>
+                        </td>
+                    </tr>
+                    
+                    
+                    
+                </table>
+                
+            </div>
+          
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap and jQuery scripts -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+
+    document.querySelectorAll('.toggle-password').forEach(item => {
+        item.addEventListener('click', function () {
+            let input = document.querySelector(this.getAttribute('toggle'));
+            if (input.getAttribute('type') === 'password') {
+                input.setAttribute('type', 'text');
+                this.classList.toggle('fa-eye-slash');
+            } else {
+                input.setAttribute('type', 'password');
+                this.classList.toggle('fa-eye-slash');
+            }
+        });
+    });
+});
+
+</script>

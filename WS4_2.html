@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Structure</title>
+    <link rel="stylesheet" href="WS4_2.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="form-group left">
+            <label>ปรเภทลูกค้า</label>
+            <select name="status">
+                <option value="all">ทั้งหมด</option>
+                <option value="approved">บุคคลธรรมดา</option>
+                <option value="pending">นิติบุคคล</option>
+            </select>
+        </div>
+        <div class="form-group right">
+            <label>เลขสมาชิก</label>
+            <input type="date" id="approvalDateFrom">
+            <input type="date" id="approvalDateTo">
+        </div>
+    </div>
+
+    <div class="form-container">
+        <div class="form-group left">
+            <label>วันที่ขออนุมัติ</label>
+
+            <input type="date" id="approvalDateFrom">
+            <input type="date" id="approvalDateTo">
+        </div>
+        <div class="form-group right">
+            <label>สถานะรายการ</label>
+            <select name="status">
+                <option value="">ทั้งหมด</option>
+                <option value="approved">อนุมัติ</option>
+                <option value="pending">รออนุมัติ</option>
+                <option value="rejected">ไม่อนุมัติ</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="centered-button">
+        <button type="button" class="search-button">Report</button>
+    </div>
+
+    <div class="container">
+        <h2>รายงานของวงเงินเครดิต</h2>
+
+    </div>
+    <div class="form-group left">
+        รหัสโปรแกรม: RKLOGIS001
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-group right">
+                <label>ประเภทลูกค้า :</label>
+                <select name="status">
+                    <option value="">ทั้งหมด</option>
+                    <option value="approved">อนุมัติ</option>
+                    <option value="pending">รออนุมัติ</option>
+                    <option value="rejected">ไม่อนุมัติ</option>
+                </select>
+            </div>
+            <div class="form-group left">
+                <label>เลขที่สมาชิก :</label>
+                <select name="status">
+                    <option value="">ทั้งหมด</option>
+                    <option value="approved">อนุมัติ</option>
+                    <option value="pending">รออนุมัติ</option>
+                    <option value="rejected">ไม่อนุมัติ</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="form-group right">
+                <label>วันที่ขออนุมัติ</label>
+                <select name="status">
+                    <option value="">ทั้งหมด</option>
+                    <option value="approved">อนุมัติ</option>
+                    <option value="pending">รออนุมัติ</option>
+                    <option value="rejected">ไม่อนุมัติ</option>
+                </select>
+            </div>
+            <div class="form-group left">
+                <label>สถานะ</label>
+                <select name="status">
+                    <option value="">ทั้งหมด</option>
+                    <option value="approved">อนุมัติ</option>
+                    <option value="pending">รออนุมัติ</option>
+                    <option value="rejected">ไม่อนุมัติ</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">ประเภทลูกค้า</th>
+                <th rowspan="2">เลขที่รายการ</th>
+                <th rowspan="2">เลขสมาชิก</th>
+                <th rowspan="2">ชื่อ-สกุล</th>
+                <th rowspan="2">วันที่ขออนุมัติ</th>
+                <th rowspan="2">ประเภทการสางพัสดุ</th>
+                <th rowspan="2">ความถี่ในการใช้บริการ</th>
+                <th rowspan="2">ประมาณการค่าส่งต่อเดือน</th>
+                <th rowspan="2">ประเภทการขอ</th>
+                <th rowspan="2">เหตุผลที่ขอเพิ่ม</th>
+                <th colspan="6">ค่าส่งจริง 6 เดือนที่ผ่านมา (บาท)</th>
+
+                <th colspan="1">สถานะ</th>
+                <th colspan="1">ผู้อนุมัติ</th>
+                <th colspan="1">วันที่มีผล</th>
+                <th colspan="1">เงื่อนไขการชำระเงิน</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>รออนุมัติ</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>ขอใหม่</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>อนุมัติ</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>ขอขยายวงเงิน</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>ไม่อนุมัติ</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+
+    <script>
+        // กำหนดช่วงวันที่ในเดือนปัจจุบัน
+        const today = new Date();
+        const firstDay = new Date(today.getFullYear(), today.getMonth(), 1).toISOString().split('T')[0];
+        const lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0).toISOString().split('T')[0];
+
+        document.getElementById("approvalDateFrom").setAttribute("min", firstDay);
+        document.getElementById("approvalDateFrom").setAttribute("max", lastDay);
+        document.getElementById("approvalDateTo").setAttribute("min", firstDay);
+        document.getElementById("approvalDateTo").setAttribute("max", lastDay);
+    </script>
+</body>
+
+</html>

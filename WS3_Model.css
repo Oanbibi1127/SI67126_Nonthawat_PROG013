@@ -1,0 +1,89 @@
+
+
+#addUserModal .form-control.short-input {
+    width: 30%;  
+    display: inline-block;  
+    margin-right: 5px;
+}
+
+#addUserModal td input.form-control.two-input {
+    width: 80% !important;  
+    display: inline-block;
+    margin-right: 5px;
+}
+
+
+#addUserModal .modal-dialog {
+    max-width: 30%;  
+    margin: 30px auto; 
+}
+
+.password-field {
+    position: relative;
+}
+
+#addUserModal input[type="password"],
+#addUserModal select {
+    width: 80%;
+    padding: 10px;
+    margin: 0 auto;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+#addUserModal .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#addUserModal p {
+    text-align: right;
+    margin: 0;
+}
+
+.text-danger {
+    color: red;
+}
+
+#addUserModal table {
+    width: 100%;
+    margin: 1px auto;
+    color: white;
+}
+
+#addUserModal table,
+#addUserModal th,
+#addUserModal td {
+    border: 0px solid #0e0a0a;
+}
+
+#addUserModal td {
+    padding: 5px;
+    text-align: left;
+    background-color: #ffffff;
+}
+
+#addUserModal label {
+    margin-right: 10px;
+}
+
+#addUserModal input[type="radio"] {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+#addUserModal i.fas.fa-plus {
+    cursor: pointer;
+    margin: 0 5px;
+    color: rgb(251, 247, 247);
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #55e7a5;
+}
+.custom-btn {
+    width: 100%;
+    padding: 12px;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Structure</title>
+    <link rel="stylesheet" href="WS4_1.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-group left">
+            <label>เลขที่ลูกค้า</label>
+            <input type="date" id="approvalDateFrom">
+            <input type="date" id="approvalDateTo">
+        </div>
+        <div class="form-group right">
+            <label>เลขที่รายการ</label>
+            <input type="date" id="approvalDateFrom">
+            <input type="date" id="approvalDateTo">
+        </div>
+    </div>
+
+    <div class="form-container">
+        <div class="form-group left">
+            <label>วันที่ขออนุมัติ</label>
+          
+            <input type="date" id="approvalDateFrom">
+            <input type="date" id="approvalDateTo">
+        </div>
+        <div class="form-group right">
+            <label>สถานะรายการ</label>
+            <select name="status">
+                <option value="">-- เลือกสถานะ --</option>
+                <option value="approved">อนุมัติ</option>
+                <option value="pending">รออนุมัติ</option>
+                <option value="rejected">ไม่อนุมัติ</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <div class="form-group left">
+            <label>ชื่อ - สกุล</label>
+            <input type="text" name="box-2">
+        </div>
+    </div>
+
+    <div class="centered-button">
+        <button type="button" class="search-button">ค้นหา</button>
+    </div>
+
+    <div class="form-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>เลขที่รายการ</th>
+                    <th>เลขที่ลูกค้า</th>
+                    <th>ชื่อ-สกุล</th>
+                    <th>วันที่ขออนุมัติ</th>
+                    <th>ประเภทการส่งพัสดุ</th>
+                    <th>สถานะ</th>
+                    <th>ผู้อนุมัติ</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>TS00001</td>
+                    <td>DP000001</td>
+                    <td>มาริษี สุขใจ</td>
+                    <td>1/10/2020</td>
+                    <td>ขายสินค้าออนไลน์</td>
+                    <td>รออนุมัติ</td>
+                    <td>เจ้าหน้าที่</td>
+                    <td><a href="#" class="action-link">Edit</a></td>
+                </tr>
+                <tr>
+                    <td>TS00002</td>
+                    <td>DP000002</td>
+                    <td>สิทธิพงศ์ คงช่วย</td>
+                    <td>30/11/2020</td>
+                    <td>ขายสินค้าออนไลน์</td>
+                    <td>รออนุมัติ</td>
+                    <td>เจ้าหน้าที่</td>
+                    <td><a href="#" class="action-link">Edit</a></td>
+                </tr>
+               
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // กำหนดช่วงวันที่ในเดือนปัจจุบัน
+        const today = new Date();
+        const firstDay = new Date(today.getFullYear(), today.getMonth(), 1).toISOString().split('T')[0];
+        const lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0).toISOString().split('T')[0];
+
+        document.getElementById("approvalDateFrom").setAttribute("min", firstDay);
+        document.getElementById("approvalDateFrom").setAttribute("max", lastDay);
+        document.getElementById("approvalDateTo").setAttribute("min", firstDay);
+        document.getElementById("approvalDateTo").setAttribute("max", lastDay);
+    </script>
+</body>
+</html>
